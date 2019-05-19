@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load tag_utils %}
+{% load widget_tweaks %}
 
 
 {% block title %} Home {% endblock %}
@@ -14,14 +16,20 @@
 {% block extrascript %} {% endblock %}
 
 
+{% block breadcrumbs %}
+    {% breadcrumb_url 'Home' %}
+{% endblock %}
+
+
+
 {% block content %}
 
 
-<div class="mt-5 text-center">
-    <h1>Easy Fiscal</h1>
+<div class="my-5 text-center">
+    <h1>Companies</h1>
 </div>
 
-<table id="company_list" class="table">
+<table class="table mt-5">
     <thead class="thead-dark">
     <tr>
         <th scope="col">#</th>
@@ -39,7 +47,7 @@
         <td class="text-center">{{c.name}}</td>
         <td class="text-center d-none d-sm-table-cell">{{c.cnpj}}</td>
         <td class="text-center d-none d-md-table-cell">{{c.fiscalnote_set.all | length}}</td>
-        <td class="text-center"> <a href="#"><span style="font-size: 1.4em" class="oi oi-list" title="More details" aria-hidden="true"></span></a></td>
+        <td class="text-center"> <a href="{% url 'company_detail' id=c.id %}"><span style="font-size: 1.4em" class="oi oi-list" title="More details" aria-hidden="true"></span></a></td>
     </tr>
     {% endfor %}
     </tbody>

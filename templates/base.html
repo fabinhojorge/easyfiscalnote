@@ -2,6 +2,7 @@
 
 {% load static %}
 
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -45,6 +46,13 @@
 
 
 <div class="container content my-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            {% block breadcrumbs %}
+            {% endblock %}
+        </ol>
+    </nav>
+
     {% block content %} {% endblock %}
 </div>
 
