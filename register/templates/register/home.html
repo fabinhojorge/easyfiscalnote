@@ -1,16 +1,49 @@
 {% extends "base.html" %}
 
+{% load static %}
+
+
 {% block title %} Home {% endblock %}
 
 {% block extrahead %} {% endblock %}
 
-{% block extrastyle %} {% endblock %}
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'register/css/register.css' %}">
+{% endblock %}
 
 {% block extrascript %} {% endblock %}
 
 
 {% block content %}
 
-<h1>Home</h1>
+
+<div class="mt-5 text-center">
+    <h1>Easy Fiscal</h1>
+</div>
+
+<table id="company_list" class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col" class="text-center">Name</th>
+        <th scope="col" class="text-center d-none d-sm-table-cell">CNPJ</th>
+        <th scope="col" class="text-center d-none d-md-table-cell">Amount of Notes</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for c in companies %}
+    <tr>
+        <th scope="row">{{c.id}}</th>
+        <td class="text-center">{{c.name}}</td>
+        <td class="text-center d-none d-sm-table-cell">{{c.cnpj}}</td>
+        <td class="text-center d-none d-md-table-cell">{{c.fiscalnote_set.all | length}}</td>
+        <td class="text-center"> <a href="#"><span style="font-size: 1.4em" class="oi oi-list" title="More details" aria-hidden="true"></span></a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
 
 {% endblock %}
