@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/fabinhojorge/OCR_web.svg?style=svg)](https://circleci.com/gh/fabinhojorge/OCR_web)
+[![CircleCI](https://circleci.com/gh/fabinhojorge/easyfiscalnote.svg?style=svg)](https://circleci.com/gh/fabinhojorge/easyfiscalnote)
 
 # Easy Fiscal Note
 This is a simple project to test Django and integration with CI.

@@ -1,3 +1,5 @@
 from django.contrib import admin
+from register.models import Company, FiscalNote
 
-# Register your models here.
+admin.site.register(Company)
+admin.site.register(FiscalNote)
