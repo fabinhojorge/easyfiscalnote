@@ -47,7 +47,11 @@
         <td class="text-center">{{c.name}}</td>
         <td class="text-center d-none d-sm-table-cell">{{c.cnpj}}</td>
         <td class="text-center d-none d-md-table-cell">{{c.fiscalnote_set.all | length}}</td>
-        <td class="text-center"> <a href="{% url 'company_detail' id=c.id %}"><span style="font-size: 1.4em" class="oi oi-list" title="More details" aria-hidden="true"></span></a></td>
+        <td class="text-center">
+            <a href="{% url 'company_detail' id=c.id %}">
+                <span style="font-size: 1.4em" class="oi oi-list" title="More details" aria-hidden="true"></span>
+            </a>
+        </td>
     </tr>
     {% endfor %}
     </tbody>
